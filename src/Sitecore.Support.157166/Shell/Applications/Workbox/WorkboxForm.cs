@@ -46,7 +46,7 @@
             }
             ItemUri itemUri = new ItemUri((Context.ClientPage.ServerProperties["id"] ?? string.Empty).ToString(), Language.Parse((string)(Context.ClientPage.ServerProperties["language"] as string)), Sitecore.Data.Version.Parse((string)(Context.ClientPage.ServerProperties["version"] as string)), Context.ContentDatabase);
             bool flag = ((args.Parameters["ui"] != null) && (args.Parameters["ui"] == "1")) ? ((bool)true) : ((args.Parameters["suppresscomment"] == null) ? ((bool)false) : ((bool)(args.Parameters["suppresscomment"] == "1")));
-            if ((!args.IsPostBack && (@null.IsNull)) && !flag)
+            if ((!args.IsPostBack && !@null.IsNull) && !flag)
             {
                 WorkflowUIHelper.DisplayCommentDialog(itemUri, @null);
                 args.WaitForPostBack();
